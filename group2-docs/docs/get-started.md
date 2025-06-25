@@ -1,46 +1,81 @@
-# Get Started
+---
+title: "Get Started"
+description: "This guide will help you get started with OpenMadness."
+---
 
-This is a normal page, which contains VuePress basics.
+## Quick Start
 
-## Pages
+This quickstart tutorial is intended for users new to **Openmadness**. It introduces the core concepts of the library and demonstrates how to perform basic operations. Whether you're building a game, creating a simulation, or experimenting with procedural generation, this guide will help you get started quickly.
 
-You can add markdown files in your vuepress directory, every markdown file will be converted to a page in your site.
+  :::note
+  This guide assumes that you have a basic knowledge of JavaScript
+  :::
 
-See [routing][] for more details.
+## What is Openmadness?
 
-## Content
+**Openmadness** is a lightweight JavaScript library that clarifies array-based and mathematical operations. Inspired by the [NumPy](https://numpy.org/) library in Python, this project offers a JavaScript-first approach to everyday data manipulation tasks.
 
-Every markdown file [will be rendered to HTML, then converted to a Vue SFC][content].
+At its core, Openmadness offers:
 
-VuePress support basic markdown syntax and [some extensions][synatex-extensions], you can also [use Vue features][vue-feature] in it.
+* A flexible **map system** for defining walkable terrain and obstacles
 
-## Configuration
+* **Entities** that can move and act based on logic or randomness
 
-VuePress use a `.vuepress/config.js`(or .ts) file as [site configuration][config], you can use it to config your site.
+* A **simulation loop** that drives turn-based behavior
 
-For [client side configuration][client-config], you can create `.vuepress/client.js`(or .ts).
+* Hooks for adding custom rules, triggers, and effects
 
-Meanwhile, you can also add configuration per page with [frontmatter][].
+## Creating Your First Simulation
 
-## Layouts and customization
+To begin, we’ll set up a simple simulation world with one entity that moves randomly. This will introduce you to the basic structure of an Openmadness program.
 
-Here are common configuration controlling layout of `@vuepress/theme-default`:
+```js
+import { Engine, World, Entity, RandomMover } from 'openmadness';
 
-- [navbar][]
-- [sidebar][]
+// Step 1: Create a simple 5x5 world with open terrain (represented by 0s)
+const terrain = [
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0]
+];
 
-Check [default theme docs][default-theme] for full reference.
+const world = new World(terrain);
 
-You can [add extra style][style] with `.vuepress/styles/index.scss` file.
+// Step 2: Create an entity with a simple random movement behavior
+const player = new Entity({
+  name: 'Player',
+  x: 2,
+  y: 2,
+  behavior: new RandomMover()
+});
 
-[routing]: https://vuejs.press/guide/page.html#routing
-[content]: https://vuejs.press/guide/page.html#content
-[synatex-extensions]: https://vuejs.press/guide/markdown.html#syntax-extensions
-[vue-feature]: https://vuejs.press/guide/markdown.html#using-vue-in-markdown
-[config]: https://vuejs.press/guide/configuration.html#client-config-file
-[client-config]: https://vuejs.press/guide/configuration.html#client-config-file
-[frontmatter]: https://vuejs.press/guide/page.html#frontmatter
-[navbar]: https://vuejs.press/reference/default-theme/config.html#navbar
-[sidebar]: https://vuejs.press/reference/default-theme/config.html#sidebar
-[default-theme]: https://vuejs.press/reference/default-theme/
-[style]: https://vuejs.press/reference/default-theme/styles.html#style-file
+// Step 3: Add the entity to the world
+world.addEntity(player);
+
+// Step 4: Create an engine and run the simulation for a few turns
+const engine = new Engine(world);
+
+for (let i = 0; i < 5; i++) {
+  engine.update();
+  console.log(`Turn ${i + 1}: Player is at (${player.x}, ${player.y})`);
+}
+```
+
+In this example, we:
+
+* Defined a **5x5 grid** of walkable terrain (where `0` might represent a floor tile).
+
+* Placed an entity at the center with a `RandomMover` behavior, which means it will move randomly to adjacent tiles each turn.
+
+* Ran the simulation for 5 turns using `engine.update()`, printing the entity's position after each move.
+
+## **Next Steps**
+
+Congratulations! You just created your first simulation! 👍 Now that you have gotten the basics down, consider picking the following:
+
+* Guides  
+* Tutorials
+
+Got any ideas to improve the guide, check out our CONTRIBUTING guide on GitHub.
