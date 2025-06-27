@@ -1,5 +1,5 @@
-import comp from "C:/Users/DDR3/Desktop/Product-docs-cohort-1/group2-docs/docs/.vuepress/.temp/pages/resources.html.vue"
-const data = JSON.parse("{\"path\":\"/resources.html\",\"title\":\"Resources\",\"lang\":\"en-US\",\"frontmatter\":{},\"headers\":[],\"git\":{},\"filePathRelative\":\"resources.md\"}")
+import comp from "C:/Users/PC/Desktop/OpenMadness/Product-docs-cohort-1/group2-docs/docs/.vuepress/.temp/pages/resources.html.vue"
+const data = JSON.parse("{\"path\":\"/resources.html\",\"title\":\"Resources\",\"lang\":\"en-US\",\"frontmatter\":{\"lang\":\"en-US\",\"title\":\"Resources\",\"description\":\"This page serves as a resource for users to troubleshoot, understand, and effectively use the OpenMadness library\"},\"headers\":[{\"level\":2,\"title\":\"FAQ\",\"slug\":\"faq\",\"link\":\"#faq\",\"children\":[]},{\"level\":2,\"title\":\"Glossary\",\"slug\":\"glossary\",\"link\":\"#glossary\",\"children\":[]}],\"git\":{\"updatedTime\":1750709260000,\"contributors\":[{\"name\":\"Dev-Liz\",\"username\":\"Dev-Liz\",\"email\":\"basseyelizabeth569@gmail.com\",\"commits\":1,\"url\":\"https://github.com/Dev-Liz\"}],\"changelog\":[{\"hash\":\"fedec698b9d01ede44784b4054cf2f8dabe44849\",\"time\":1750709260000,\"email\":\"basseyelizabeth569@gmail.com\",\"author\":\"Dev-Liz\",\"message\":\"setup\"}]},\"filePathRelative\":\"resources.md\"}")
 export { comp, data }
 
 if (import.meta.webpackHot) {
