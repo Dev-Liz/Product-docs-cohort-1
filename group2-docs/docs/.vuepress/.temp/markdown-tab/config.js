@@ -1,6 +1,6 @@
-import { CodeTabs } from "C:/Users/DDR3/Desktop/Product-docs-cohort-1/group2-docs/node_modules/@vuepress/plugin-markdown-tab/lib/client/components/CodeTabs.js";
-import { Tabs } from "C:/Users/DDR3/Desktop/Product-docs-cohort-1/group2-docs/node_modules/@vuepress/plugin-markdown-tab/lib/client/components/Tabs.js";
-import "C:/Users/DDR3/Desktop/Product-docs-cohort-1/group2-docs/node_modules/@vuepress/plugin-markdown-tab/lib/client/styles/vars.css";
+import { CodeTabs } from "/Users/roseakoth/Desktop/product-docs/TWMP-Product-docs-guides-2/group2-docs/node_modules/@vuepress/plugin-markdown-tab/lib/client/components/CodeTabs.js";
+import { Tabs } from "/Users/roseakoth/Desktop/product-docs/TWMP-Product-docs-guides-2/group2-docs/node_modules/@vuepress/plugin-markdown-tab/lib/client/components/Tabs.js";
+import "/Users/roseakoth/Desktop/product-docs/TWMP-Product-docs-guides-2/group2-docs/node_modules/@vuepress/plugin-markdown-tab/lib/client/styles/vars.css";
 
 export default {
   enhance: ({ app }) => {
