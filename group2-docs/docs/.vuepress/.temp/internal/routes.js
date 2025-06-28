@@ -1,15 +1,13 @@
 export const redirects = JSON.parse("{}")
 
 export const routes = Object.fromEntries([
-  ["/changelog.html", { loader: () => import(/* webpackChunkName: "changelog.html" */"C:/Users/DDR3/Desktop/Product-docs-cohort-1/group2-docs/docs/.vuepress/.temp/pages/changelog.html.js"), meta: {"title":"Changelog"} }],
-  ["/get-started.html", { loader: () => import(/* webpackChunkName: "get-started.html" */"C:/Users/DDR3/Desktop/Product-docs-cohort-1/group2-docs/docs/.vuepress/.temp/pages/get-started.html.js"), meta: {"title":"Get Started"} }],
-  ["/getting-started.html", { loader: () => import(/* webpackChunkName: "getting-started.html" */"C:/Users/DDR3/Desktop/Product-docs-cohort-1/group2-docs/docs/.vuepress/.temp/pages/getting-started.html.js"), meta: {"title":"Getting Started"} }],
-  ["/guides.html", { loader: () => import(/* webpackChunkName: "guides.html" */"C:/Users/DDR3/Desktop/Product-docs-cohort-1/group2-docs/docs/.vuepress/.temp/pages/guides.html.js"), meta: {"title":"Guides"} }],
-  ["/om-functions.html", { loader: () => import(/* webpackChunkName: "om-functions.html" */"C:/Users/DDR3/Desktop/Product-docs-cohort-1/group2-docs/docs/.vuepress/.temp/pages/om-functions.html.js"), meta: {"title":"OM-Functions"} }],
-  ["/", { loader: () => import(/* webpackChunkName: "index.html" */"C:/Users/DDR3/Desktop/Product-docs-cohort-1/group2-docs/docs/.vuepress/.temp/pages/index.html.js"), meta: {"title":"Home"} }],
-  ["/resources.html", { loader: () => import(/* webpackChunkName: "resources.html" */"C:/Users/DDR3/Desktop/Product-docs-cohort-1/group2-docs/docs/.vuepress/.temp/pages/resources.html.js"), meta: {"title":"Resources"} }],
-  ["/tutorials.html", { loader: () => import(/* webpackChunkName: "tutorials.html" */"C:/Users/DDR3/Desktop/Product-docs-cohort-1/group2-docs/docs/.vuepress/.temp/pages/tutorials.html.js"), meta: {"title":"Tutorials"} }],
-  ["/404.html", { loader: () => import(/* webpackChunkName: "404.html" */"C:/Users/DDR3/Desktop/Product-docs-cohort-1/group2-docs/docs/.vuepress/.temp/pages/404.html.js"), meta: {"title":""} }],
+  ["/", { loader: () => import(/* webpackChunkName: "index.html" */"/Users/roseakoth/Desktop/product-docs/TWMP-Product-docs-guides-2/group2-docs/docs/.vuepress/.temp/pages/index.html.js"), meta: {"title":"Home"} }],
+  ["/advanced-guide.html", { loader: () => import(/* webpackChunkName: "advanced-guide.html" */"/Users/roseakoth/Desktop/product-docs/TWMP-Product-docs-guides-2/group2-docs/docs/.vuepress/.temp/pages/advanced-guide.html.js"), meta: {"title":"Advanced Guide"} }],
+  ["/changelog.html", { loader: () => import(/* webpackChunkName: "changelog.html" */"/Users/roseakoth/Desktop/product-docs/TWMP-Product-docs-guides-2/group2-docs/docs/.vuepress/.temp/pages/changelog.html.js"), meta: {"title":"Changelog"} }],
+  ["/get-started.html", { loader: () => import(/* webpackChunkName: "get-started.html" */"/Users/roseakoth/Desktop/product-docs/TWMP-Product-docs-guides-2/group2-docs/docs/.vuepress/.temp/pages/get-started.html.js"), meta: {"title":"Get Started"} }],
+  ["/intermediate-guide.html", { loader: () => import(/* webpackChunkName: "intermediate-guide.html" */"/Users/roseakoth/Desktop/product-docs/TWMP-Product-docs-guides-2/group2-docs/docs/.vuepress/.temp/pages/intermediate-guide.html.js"), meta: {"title":"Intermediate Guide"} }],
+  ["/tutorials.html", { loader: () => import(/* webpackChunkName: "tutorials.html" */"/Users/roseakoth/Desktop/product-docs/TWMP-Product-docs-guides-2/group2-docs/docs/.vuepress/.temp/pages/tutorials.html.js"), meta: {"title":"Tutorials"} }],
+  ["/404.html", { loader: () => import(/* webpackChunkName: "404.html" */"/Users/roseakoth/Desktop/product-docs/TWMP-Product-docs-guides-2/group2-docs/docs/.vuepress/.temp/pages/404.html.js"), meta: {"title":""} }],
 ]);
 
 if (import.meta.webpackHot) {
