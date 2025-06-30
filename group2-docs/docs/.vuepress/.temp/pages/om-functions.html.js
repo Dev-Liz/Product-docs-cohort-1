@@ -1,5 +1,5 @@
-import comp from "C:/Users/DDR3/Desktop/Product-docs-cohort-1/group2-docs/docs/.vuepress/.temp/pages/om-functions.html.vue"
-const data = JSON.parse("{\"path\":\"/om-functions.html\",\"title\":\"OM-Functions\",\"lang\":\"en-US\",\"frontmatter\":{},\"headers\":[],\"git\":{},\"filePathRelative\":\"om-functions.md\"}")
+import comp from "C:/Users/USER/Product-docs-cohort-1/group2-docs/docs/.vuepress/.temp/pages/om-functions.html.vue"
+const data = JSON.parse("{\"path\":\"/om-functions.html\",\"title\":\"OM-Functions\",\"lang\":\"en-US\",\"frontmatter\":{},\"headers\":[],\"git\":{\"updatedTime\":1750709260000,\"contributors\":[{\"name\":\"Dev-Liz\",\"username\":\"Dev-Liz\",\"email\":\"basseyelizabeth569@gmail.com\",\"commits\":1,\"url\":\"https://github.com/Dev-Liz\"}],\"changelog\":[{\"hash\":\"fedec698b9d01ede44784b4054cf2f8dabe44849\",\"time\":1750709260000,\"email\":\"basseyelizabeth569@gmail.com\",\"author\":\"Dev-Liz\",\"message\":\"setup\"}]},\"filePathRelative\":\"om-functions.md\"}")
 export { comp, data }
 
 if (import.meta.webpackHot) {
