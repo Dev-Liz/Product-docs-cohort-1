@@ -1,46 +1,184 @@
-# Get Started
+---
+title: "Get Started"
+description: "This guide will help you get started with OpenMadness."
+---
 
-This is a normal page, which contains VuePress basics.
+## 👋 Introduction
 
-## Pages
+### Overview
 
-You can add markdown files in your vuepress directory, every markdown file will be converted to a page in your site.
+Openmadness is a fun and beginner-friendly JavaScript tool that helps you do math and work with arrays (lists of numbers) without stress.
 
-See [routing][] for more details.
+abstract
+Openmadness is a fun and beginner-friendly JavaScript tool that helps you do math and work with arrays (lists of numbers) without stress.It was built for learners, tinkerers, and developers who enjoy working with data in a simple and creative way.
 
-## Content
 
-Every markdown file [will be rendered to HTML, then converted to a Vue SFC][content].
+::: tip In this guide, you’ll learn:
 
-VuePress support basic markdown syntax and [some extensions][synatex-extensions], you can also [use Vue features][vue-feature] in it.
+- What Openmadness is and why it exists
 
-## Configuration
+- Who the tool is built for
 
-VuePress use a `.vuepress/config.js`(or .ts) file as [site configuration][config], you can use it to config your site.
+- What you can do with it
 
-For [client side configuration][client-config], you can create `.vuepress/client.js`(or .ts).
+- Where to go next after this guide
+:::
 
-Meanwhile, you can also add configuration per page with [frontmatter][].
 
-## Layouts and customization
+---
 
-Here are common configuration controlling layout of `@vuepress/theme-default`:
+:::info Who Should Use This Guide
 
-- [navbar][]
-- [sidebar][]
+This guide is perfect for:
 
-Check [default theme docs][default-theme] for full reference.
+- New developers learning JavaScript
 
-You can [add extra style][style] with `.vuepress/styles/index.scss` file.
+- People working with arrays or numbers who want easier tools
 
-[routing]: https://vuejs.press/guide/page.html#routing
-[content]: https://vuejs.press/guide/page.html#content
-[synatex-extensions]: https://vuejs.press/guide/markdown.html#syntax-extensions
-[vue-feature]: https://vuejs.press/guide/markdown.html#using-vue-in-markdown
-[config]: https://vuejs.press/guide/configuration.html#client-config-file
-[client-config]: https://vuejs.press/guide/configuration.html#client-config-file
-[frontmatter]: https://vuejs.press/guide/page.html#frontmatter
-[navbar]: https://vuejs.press/reference/default-theme/config.html#navbar
-[sidebar]: https://vuejs.press/reference/default-theme/config.html#sidebar
-[default-theme]: https://vuejs.press/reference/default-theme/
-[style]: https://vuejs.press/reference/default-theme/styles.html#style-file
+- Anyone looking for a lightweight library with a "NumPy feel" in JavaScript
+:::
+
+
+---
+
+::: warning Before You Begin
+
+To get the most out of this guide, it helps to:
+
+- Know a little JavaScript (functions and arrays)
+
+- Have Node.js installed
+
+- Be ready to try out some code and have fun!
+:::
+
+::: tip
+You don’t need to be a math expert. Openmadness is made to be simple, friendly, and easy to use — even if you’re new to code.
+:::
+
+---
+
+### What Is Openmadness?
+
+Openmadness is not a copy of NumPy, but it was inspired by it.
+
+It gives you helpful tools like:
+
+```
+.sum(), .mean(), .transpose(), .flatten()
+```
+
+All written in clean, readable JavaScript.
+
+Here’s a quick example of what Openmadness can do:
+
+```js
+const matrix = omArray([
+  [1, 2],
+  [3, 4]
+]);
+
+const result = matrix.transpose().sum();
+```
+
+The code above transposes the matrix (flips the rows and columns) and adds up all the numbers.
+
+::: tip
+Openmadness works best when you learn by doing. Try things out and explore how the functions behave.
+:::
+
+---
+
+
+
+**Next Steps**
+
+<p style="margin-bottom: 0.5rem;">
+  <a href="./quickstart.md" style="padding: 8px 16px; background-color: #3eaf7c; color: white; text-decoration: none; border-radius: 4px;">
+    Try the Quickstart Guide
+  </a>
+</p><p>
+  <a href="https://github.com/yourusername/openmadness/blob/main/CONTRIBUTING.md" style="padding: 8px 16px; background-color: #007acc; color: white; text-decoration: none; border-radius: 4px;">
+    View the CONTRIBUTING Guide
+  </a>
+</p>
+
+
+# 🛠️ Installation
+
+::: tip In this guide, you’ll learn how to install and run Openmadness. Whether you’re using it in a project or just want to try it out on your computer, we’ve got you covered.
+:::
+
+
+Having a test file like `play.js` makes it easier to experiment with Openmadness features as you go.
+
+
+## Install Options
+
+You can install Openmadness in two main ways:
+
+
+### Option 1: Use NPM (Recommended)
+
+Use this if you're building a project with Node.js or any bundler.
+
+- Open your terminal
+
+
+- Run the command below:
+
+
+
+```js
+npm install openmadness
+```
+- Then use Openmadness in your code like this:
+
+
+
+```js
+import { omArray } from 'openmadness';
+
+const sample = omArray([10, 20, 30]);
+console.log(sample.mean()); // Output: 20
+```
+This method is best if you’re using Openmadness in a Node, Vite, or Webpack project.
+
+### Option 2: Run It Locally
+
+Use this option if you want to test things out or contribute to the project.
+
+- Clone the project
+
+```js
+git clone https://github.com/yourusername/openmadness.git
+cd openmadness
+```
+
+- Install the dependencies
+```js
+npm install
+```
+- Create a test file (e.g. play.js)
+
+```js
+import { omArray } from './src/index.js';
+
+const data = omArray([1, 2, 3, 4]);
+console.log(data.sum()); // Output: 10
+```
+- Run the script
+```js
+node play.js
+```
+- (Optional) Run the test suite
+
+```js
+npm run test
+```
+
+
+::: info
+This method is great if you want to explore how the functions work before writing documentation or contributing to the code.
+::: 
+
