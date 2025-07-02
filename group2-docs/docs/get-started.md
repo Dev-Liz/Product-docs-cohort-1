@@ -3,79 +3,246 @@ title: "Get Started"
 description: "This guide will help you get started with OpenMadness."
 ---
 
-## Quick Start
+## 👋 Introduction
 
-This quickstart tutorial is intended for users new to **Openmadness**. It introduces the core concepts of the library and demonstrates how to perform basic operations. Whether you're building a game, creating a simulation, or experimenting with procedural generation, this guide will help you get started quickly.
+Overview
 
-  :::note
-  This guide assumes that you have a basic knowledge of JavaScript
-  :::
+abstractOpenmadness is a fun and beginner-friendly JavaScript tool that helps you do math and work with arrays (lists of numbers) without stress.
 
-## What is Openmadness?
+abstract
+Openmadness is a fun and beginner-friendly JavaScript tool that helps you do math and work with arrays (lists of numbers) without stress.It was built for learners, tinkerers, and developers who enjoy working with data in a simple and creative way.
 
-**Openmadness** is a lightweight JavaScript library that clarifies array-based and mathematical operations. Inspired by the [NumPy](https://numpy.org/) library in Python, this project offers a JavaScript-first approach to everyday data manipulation tasks.
+In this guide, you’ll learn:
 
-At its core, Openmadness offers:
+- What Openmadness is and why it exists
 
-* A flexible **map system** for defining walkable terrain and obstacles
+- Who the tool is built for
 
-* **Entities** that can move and act based on logic or randomness
+- What you can do with it
 
-* A **simulation loop** that drives turn-based behavior
+- Where to go next after this guide
 
-* Hooks for adding custom rules, triggers, and effects
 
-## Creating Your First Simulation
 
-To begin, we’ll set up a simple simulation world with one entity that moves randomly. This will introduce you to the basic structure of an Openmadness program.
+---
+
+Who Should Use This Guide
+
+This guide is perfect for:
+
+- New developers learning JavaScript
+
+- People working with arrays or numbers who want easier tools
+
+- Anyone looking for a lightweight library with a "NumPy feel" in JavaScript
+
+
+
+---
+
+Before You Begin
+
+To get the most out of this guide, it helps to:
+
+Know a little JavaScript (functions and arrays)
+
+Have Node.js installed
+
+Be ready to try out some code and have fun!
+
+
+tipYou don’t need to be a math expert. Openmadness is made to be simple, friendly, and easy to use — even if you’re new to code.
+
+tip
+You don’t need to be a math expert. Openmadness is made to be simple, friendly, and easy to use — even if you’re new to code.
+---
+
+What Is Openmadness?
+
+Openmadness is not a copy of NumPy, but it was inspired by it.
+
+It gives you helpful tools like:
+
+.sum(), .mean(), .transpose(), .flatten()
+
+All written in clean, readable JavaScript.
+
+exampleHere’s a quick example of what Openmadness can do:
+
+const matrix = omArray([
+  [1, 2],
+  [3, 4]
+]);
+
+const result = matrix.transpose().sum();
+
+example
+Here’s a quick example of what Openmadness can do:
 
 ```js
-import { Engine, World, Entity, RandomMover } from 'openmadness';
+const matrix = omArray([
+  [1, 2],
+  [3, 4]
+]);
 
-// Step 1: Create a simple 5x5 world with open terrain (represented by 0s)
-const terrain = [
-  [0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0]
-];
+const result = matrix.transpose().sum();
+```infoThe code above transposes the matrix (flips the rows and columns) and adds up all the numbers.
 
-const world = new World(terrain);
+info
+The code above transposes the matrix (flips the rows and columns) and adds up all the numbers.tipOpenmadness works best when you learn by doing — try things out and explore how the functions behave.
 
-// Step 2: Create an entity with a simple random movement behavior
-const player = new Entity({
-  name: 'Player',
-  x: 2,
-  y: 2,
-  behavior: new RandomMover()
-});
+tip
+Openmadness works best when you learn by doing — try things out and explore how the functions behave.
+---
 
-// Step 3: Add the entity to the world
-world.addEntity(player);
+success  
 
-// Step 4: Create an engine and run the simulation for a few turns
-const engine = new Engine(world);
+Next Steps
 
-for (let i = 0; i < 5; i++) {
-  engine.update();
-  console.log(`Turn ${i + 1}: Player is at (${player.x}, ${player.y})`);
-}
-```
+<p style="margin-bottom: 0.5rem;">
+  <a href="./quickstart.md" style="padding: 8px 16px; background-color: #3eaf7c; color: white; text-decoration: none; border-radius: 4px;">
+    Try the Quickstart Guide
+  </a>
+</p><p>
+  <a href="https://github.com/yourusername/openmadness/blob/main/CONTRIBUTING.md" style="padding: 8px 16px; background-color: #007acc; color: white; text-decoration: none; border-radius: 4px;">
+    View the CONTRIBUTING Guide
+  </a>
+</p>success 
 
-In this example, we:
+Next Steps
 
-* Defined a **5x5 grid** of walkable terrain (where `0` might represent a floor tile).
+<p style="margin-bottom: 0.5rem;">
+  <a href="./quickstart.md" style="padding: 8px 16px; background-color: #3eaf7c; color: white; text-decoration: none; border-radius: 4px;">
+    Try the Quickstart Guide
+  </a>
+</p>
 
-* Placed an entity at the center with a `RandomMover` behavior, which means it will move randomly to adjacent tiles each turn.
+<p>
+  <a href="https://github.com/yourusername/openmadness/blob/main/CONTRIBUTING.md" style="padding: 8px 16px; background-color: #007acc; color: white; text-decoration: none; border-radius: 4px;">
+    View the CONTRIBUTING Guide
+  </a>
+</p>
 
-* Ran the simulation for 5 turns using `engine.update()`, printing the entity's position after each move.
+## 🛠️ Installation
 
-## **Next Steps**
+Overview
 
-Congratulations! You just created your first simulation! 👍 Now that you have gotten the basics down, consider picking the following:
+abstractIn this guide, you’ll learn how to install and run Openmadness. Whether you’re using it in a project or just want to try it out on your computer, we’ve got you covered.
 
-* Guides  
-* Tutorials
+abstract
+In this guide, you’ll learn how to install and run Openmadness. Whether you’re using it in a project or just want to try it out on your computer, we’ve got you covered.
+---
 
-Got any ideas to improve the guide, check out our CONTRIBUTING guide on GitHub.
+Before You Begin
+
+Make sure you have the following ready:
+
+- Node.js installed on your computer
+
+- A code editor (like VS Code)
+
+- A basic understanding of how to run JavaScript locally or in the browser
+
+
+tipHaving a test file like play.js makes it easier to experiment with Openmadness features as you go.
+
+tip
+Having a test file like `play.js` makes it easier to experiment with Openmadness features as you go.
+---
+
+Install Options
+
+You can install Openmadness in two main ways:
+
+
+---
+
+Option 1: Use NPM (Recommended)
+
+Use this if you're building a project with Node.js or any bundler.
+
+1. Open your terminal
+
+
+2. Run the command below:
+
+
+
+npm install openmadness
+
+3. Then use Openmadness in your code like this:
+
+
+
+import { omArray } from 'openmadness';
+
+const sample = omArray([10, 20, 30]);
+console.log(sample.mean()); // Output: 20
+
+tipThis method is best if you’re using Openmadness in a Node, Vite, or Webpack project.
+
+tip
+This method is best if you’re using Openmadness in a Node, Vite, or Webpack project.
+---
+
+Option 2: Run It Locally
+
+Use this option if you want to test things out or contribute to the project.
+
+1. Clone the project
+
+git clone https://github.com/yourusername/openmadness.git
+cd openmadness
+
+2. Install the dependencies
+
+npm install
+
+3. Create a test file (e.g. play.js)
+
+import { omArray } from './src/index.js';
+
+const data = omArray([1, 2, 3, 4]);
+console.log(data.sum()); // Output: 10
+
+4. Run the script
+
+node play.js
+
+5. (Optional) Run the test suite
+
+npm run test
+
+infoThis method is great if you want to explore how the functions work before writing documentation or contributing to the code.
+
+info
+This method is great if you want to explore how the functions work before writing documentation or contributing to the code.
+---
+
+success 
+
+Next Steps
+
+<p style="margin-bottom: 0.5rem;">
+  <a href="./quickstart.md" style="padding: 8px 16px; background-color: #3eaf7c; color: white; text-decoration: none; border-radius: 4px;">
+    Try the Quickstart Guide
+  </a>
+</p><p>
+  <a href="https://github.com/yourusername/openmadness/blob/main/CONTRIBUTING.md" style="padding: 8px 16px; background-color: #007acc; color: white; text-decoration: none; border-radius: 4px;">
+  View the CONTRIBUTING Guide
+  </a>
+</p>success 
+
+Next Steps
+
+<p style="margin-bottom: 0.5rem;">
+  <a href="./quickstart.md" style="padding: 8px 16px; background-color: #3eaf7c; color: white; text-decoration: none; border-radius: 4px;">
+    👉 Try the Quickstart Guide
+  </a>
+</p>
+
+<p>
+  <a href="https://github.com/yourusername/openmadness/blob/main/CONTRIBUTING.md" style="padding: 8px 16px; background-color: #007acc; color: white; text-decoration: none; border-radius: 4px;">
+    View the CONTRIBUTING Guide
+  </a>
+</p>
