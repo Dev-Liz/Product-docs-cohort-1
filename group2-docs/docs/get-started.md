@@ -3,79 +3,182 @@ title: "Get Started"
 description: "This guide will help you get started with OpenMadness."
 ---
 
-## Quick Start
+## 👋 Introduction
 
-This quickstart tutorial is intended for users new to **Openmadness**. It introduces the core concepts of the library and demonstrates how to perform basic operations. Whether you're building a game, creating a simulation, or experimenting with procedural generation, this guide will help you get started quickly.
+### Overview
 
-  :::note
-  This guide assumes that you have a basic knowledge of JavaScript
-  :::
+Openmadness is a fun and beginner-friendly JavaScript tool that helps you do math and work with arrays (lists of numbers) without stress.
 
-## What is Openmadness?
+abstract
+Openmadness is a fun and beginner-friendly JavaScript tool that helps you do math and work with arrays (lists of numbers) without stress.It was built for learners, tinkerers, and developers who enjoy working with data in a simple and creative way.
 
-**Openmadness** is a lightweight JavaScript library that clarifies array-based and mathematical operations. Inspired by the [NumPy](https://numpy.org/) library in Python, this project offers a JavaScript-first approach to everyday data manipulation tasks.
 
-At its core, Openmadness offers:
+::: tip In this guide, you’ll learn:
 
-* A flexible **map system** for defining walkable terrain and obstacles
+- What Openmadness is and why it exists
 
-* **Entities** that can move and act based on logic or randomness
+- Who the tool is built for
 
-* A **simulation loop** that drives turn-based behavior
+- What you can do with it
 
-* Hooks for adding custom rules, triggers, and effects
+- Where to go next after this guide
+:::
 
-## Creating Your First Simulation
 
-To begin, we’ll set up a simple simulation world with one entity that moves randomly. This will introduce you to the basic structure of an Openmadness program.
+---
 
-```js
-import { Engine, World, Entity, RandomMover } from 'openmadness';
+:::info Who Should Use This Guide
 
-// Step 1: Create a simple 5x5 world with open terrain (represented by 0s)
-const terrain = [
-  [0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0]
-];
+This guide is perfect for:
 
-const world = new World(terrain);
+- New developers learning JavaScript
 
-// Step 2: Create an entity with a simple random movement behavior
-const player = new Entity({
-  name: 'Player',
-  x: 2,
-  y: 2,
-  behavior: new RandomMover()
-});
+- People working with arrays or numbers who want easier tools
 
-// Step 3: Add the entity to the world
-world.addEntity(player);
+- Anyone looking for a lightweight library with a "NumPy feel" in JavaScript
+:::
 
-// Step 4: Create an engine and run the simulation for a few turns
-const engine = new Engine(world);
 
-for (let i = 0; i < 5; i++) {
-  engine.update();
-  console.log(`Turn ${i + 1}: Player is at (${player.x}, ${player.y})`);
-}
+---
+
+::: warning Before You Begin
+
+To get the most out of this guide, it helps to:
+
+- Know a little JavaScript (functions and arrays)
+
+- Have Node.js installed
+
+- Be ready to try out some code and have fun!
+:::
+
+::: tip
+You don’t need to be a math expert. Openmadness is made to be simple, friendly, and easy to use — even if you’re new to code.
+:::
+
+---
+
+### What Is Openmadness?
+
+Openmadness is not a copy of NumPy, but it was inspired by it.
+
+It gives you helpful tools like:
+
+```
+.sum(), .mean(), .transpose(), .flatten()
 ```
 
-In this example, we:
+All written in clean, readable JavaScript.
 
-* Defined a **5x5 grid** of walkable terrain (where `0` might represent a floor tile).
+Here’s a quick example of what Openmadness can do:
 
-* Placed an entity at the center with a `RandomMover` behavior, which means it will move randomly to adjacent tiles each turn.
+```js
+const matrix = omArray([
+  [1, 2],
+  [3, 4]
+]);
 
-* Ran the simulation for 5 turns using `engine.update()`, printing the entity's position after each move.
+const result = matrix.transpose().sum();
+```
 
-## **Next Steps**
+The code above transposes the matrix (flips the rows and columns) and adds up all the numbers.
 
-Congratulations! You just created your first simulation! 👍 Now that you have gotten the basics down, consider picking the following:
+::: tip
+Openmadness works best when you learn by doing. Try things out and explore how the functions behave.
+:::
 
-* Guides  
-* Tutorials
+---
 
-Got any ideas to improve the guide, check out our CONTRIBUTING guide on GitHub.
+
+
+**Next Steps**
+
+<p style="margin-bottom: 0.5rem;">
+  <a href="./quickstart.md" style="padding: 8px 16px; background-color: #3eaf7c; color: white; text-decoration: none; border-radius: 4px;">
+    Try the Quickstart Guide
+  </a>
+</p><p>
+  <a href="https://github.com/yourusername/openmadness/blob/main/CONTRIBUTING.md" style="padding: 8px 16px; background-color: #007acc; color: white; text-decoration: none; border-radius: 4px;">
+    View the CONTRIBUTING Guide
+  </a>
+</p>
+
+
+# 🛠️ Installation
+
+::: tip In this guide, you’ll learn how to install and run Openmadness. Whether you’re using it in a project or just want to try it out on your computer, we’ve got you covered.
+:::
+
+
+Having a test file like `play.js` makes it easier to experiment with Openmadness features as you go.
+
+
+## Install Options
+
+You can install Openmadness in two main ways:
+
+
+### Option 1: Use NPM (Recommended)
+
+Use this if you're building a project with Node.js or any bundler.
+
+- Open your terminal
+
+
+- Run the command below:
+
+
+
+```js
+npm install openmadness
+```
+- Then use Openmadness in your code like this:
+
+
+
+```js
+import { omArray } from 'openmadness';
+
+const sample = omArray([10, 20, 30]);
+console.log(sample.mean()); // Output: 20
+```
+This method is best if you’re using Openmadness in a Node, Vite, or Webpack project.
+
+### Option 2: Run It Locally
+
+Use this option if you want to test things out or contribute to the project.
+
+- Clone the project
+
+```js
+git clone https://github.com/yourusername/openmadness.git
+cd openmadness
+```
+
+- Install the dependencies
+```js
+npm install
+```
+- Create a test file (e.g. play.js)
+
+```js
+import { omArray } from './src/index.js';
+
+const data = omArray([1, 2, 3, 4]);
+console.log(data.sum()); // Output: 10
+```
+- Run the script
+```js
+node play.js
+```
+- (Optional) Run the test suite
+
+```js
+npm run test
+```
+
+
+::: info
+This method is great if you want to explore how the functions work before writing documentation or contributing to the code.
+::: 
+
