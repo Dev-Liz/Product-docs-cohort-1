@@ -3,20 +3,39 @@ import { defineUserConfig } from 'vuepress'
 import { viteBundler } from '@vuepress/bundler-vite'
 
 export default defineUserConfig({
+     plugins: [
+       'vuepress-plugin-contributors', {
+            showAvatar: true,
+            showCount: true,
+            avatarSize: 32,
+            defaultAvatar: '/not-found.png', 
+            avatarProvider: 'github',
+            userProfileUrlProvider: 'github'
+        }
+     ],
+
   lang: 'en-US',
 
-  description: 'My first VuePress Site',
+  description: 'Openmadness Documentation',
+
+  head: [
+        ['link', { rel: 'icon', type: 'image/png', sizes: '32x32',  href: 'openmadness-icon.png' }],
+     ],
 
   theme: defaultTheme({
-    logo: '../assets/om-logo-dark.svg',
+    logo: 'om-logo-dark.svg',
     logoAlt: 'openmadness-logo',
-    logoDark: '../assets/om-logo-light.svg',
+    logoDark: 'om-logo-light.svg',
     colorMode: 'auto',
     colorModeSwitch: 'true',
     externalLinkIcon: 'true',
 
      navbar: [
       // NavbarLink
+       {
+        text: 'Home',
+        link: 'Readme.md',
+      },
       {
         text: 'Getting Started',
         link: '/getting-started/introduction.md',
@@ -48,7 +67,7 @@ export default defineUserConfig({
               },
               {
                 text: 'Advanced',
-                link: 'tutorials/advanced/building-a-network.md',
+                link: 'guides/advanced/building-a-network.md',
               },
           ],
         },
@@ -170,7 +189,13 @@ export default defineUserConfig({
         },
       ],
     'changelog' : 'changelog',
-}
+},
+    editLinks: true,
+		editLinkText: "Edit this page on GitHub",
+		docsRepo: "https://github.com/Dev-Liz/Product-docs-cohort-1",
+		docsDir: "group2-docs/docs",
+		docsBranch: "group2-master",
 }),
+    
   bundler: viteBundler(),
 })

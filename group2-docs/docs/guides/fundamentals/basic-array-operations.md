@@ -33,7 +33,7 @@ console.log(“Addition of an array”, sumOfArray)
 **Output:**
 
 
-<!-- ![Addition of array in Openmadness library](../assets/additionOfArrays.png) -->
+![Addition of array in Openmadness library](/additionOfArrays.png)
 
 **2. subtract()**: This method allows you to find the difference between two arrays.
 
@@ -48,7 +48,7 @@ console.log(“subtraction of an array”, subtractArray)
 ```
 **Output:**
 
-<!-- ![Subtraction of arrays in Openmadness library](../../assets/subtractionOfArrays.png) -->
+![Subtraction of arrays in Openmadness library](/subtractionOfArrays.png)
 
 **3. multiply()**: This method allows you to multiply arrays together.
 
@@ -63,7 +63,7 @@ console.log(“Multiplication of an array”, multiplyArray)
 ```
 **Output**:
 
-<!-- ![Multiplication of arrays in Openmadness library](../../assets/multiplicationOfArrays.png) -->
+![Multiplication of arrays in Openmadness library](/multiplicationOfArrays.png)
 
 **4. dot()**: This method allows you to calculate the dot product of two arrays, i.e., multiplying the corresponding array elements and summing them up.
 
@@ -82,4 +82,4 @@ Dot = [(15*8) + (12*24) + (5*10) + (19*5) + (25*13)];
 ```
 **Output**:
 
-<!-- ![Dot of an Array in Openmadness library](../../assets/dotOfArrays.png) -->
+![Dot of an Array in Openmadness library](/dotOfArrays.png)

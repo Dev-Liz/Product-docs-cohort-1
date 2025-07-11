@@ -6,7 +6,7 @@ description: "This page will guide you on how to install openmadness"
 
 # Axes
 
- Axes
+Axes
 Axes refer to the different dimensions along which you can perform operations in your data. In a 2D array (like a grid), you have two main axes:
 Axis 0: Runs vertically, down the rows.
 Axis 1: Runs horizontally, across the columns.

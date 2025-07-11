@@ -74,7 +74,7 @@ Output: [ [ 0.74 ], [ 0.68 ] ]
 ```
 Each output value corresponds to a prediction for the input sample.
 
-### Next Steps
+**Next Steps**
 
 This forward-pass prototype can be expanded by:
 - Adding more hidden layers

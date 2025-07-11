@@ -1,4 +1,4 @@
-<template><div><p>Advanced Guide</p>
+<template><div><h1 id="advanced-guide" tabindex="-1"><a class="header-anchor" href="#advanced-guide"><span>Advanced Guide</span></a></h1>
 <p>This advanced guide will show you how to perform operations on arrays of different sizes and dive into some core linear algebra concepts.</p>
 <p>We’ll explore three powerful concepts:</p>
 <ul>

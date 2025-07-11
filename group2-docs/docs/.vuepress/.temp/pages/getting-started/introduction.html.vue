@@ -1,10 +1,9 @@
 <template><div><h1 id="👋-introduction" tabindex="-1"><a class="header-anchor" href="#👋-introduction"><span>👋 Introduction</span></a></h1>
-<p><img src="@source/assets/openmadness-banner.png" alt="openmadness-banner"></p>
-<nav class="table-of-contents"><ul><li><router-link to="#overview">Overview</router-link></li><li><router-link to="#what-you-ll-learn">What You’ll Learn</router-link></li><li><router-link to="#who-should-use-this-guide">Who Should Use This Guide</router-link></li><li><router-link to="#what-is-openmadness">What Is Openmadness?</router-link></li></ul></nav>
+<p><img src="/openmadness-banner.png" alt="openmadness-banner"></p>
 <h2 id="overview" tabindex="-1"><a class="header-anchor" href="#overview"><span>Overview</span></a></h2>
-<p>Openmadness is a fun and beginner-friendly JavaScript tool that helps you do math and work with arrays (lists of numbers) without stress. It was built for learners, tinkerers, and developers who enjoy working with data in a simple way.</p>
-<p>In this guide, you’ll learn what Openmadness is, who it’s for, and how it can make working with numbers in JavaScript feel smooth and even fun.</p>
-<h2 id="what-you-ll-learn" tabindex="-1"><a class="header-anchor" href="#what-you-ll-learn"><span>What You’ll Learn</span></a></h2>
+<p>Openmadness is a fun and beginner-friendly JavaScript tool that helps you do math and work with arrays (lists of numbers) without stress.
+It was built for learners, tinkerers, and developers who enjoy working with data in a simple and creative way.</p>
+<h2 id="in-this-guide-you-ll-learn" tabindex="-1"><a class="header-anchor" href="#in-this-guide-you-ll-learn"><span>In this guide you'll learn:</span></a></h2>
 <ul>
 <li>
 <p>What Openmadness is and why it exists</p>
@@ -13,14 +12,15 @@
 <p>Who the tool is built for</p>
 </li>
 <li>
-<p>What you can expect to do with it</p>
+<p>What you can to do with it</p>
 </li>
 <li>
 <p>Where to go next after this guide</p>
 </li>
 </ul>
 <h2 id="who-should-use-this-guide" tabindex="-1"><a class="header-anchor" href="#who-should-use-this-guide"><span>Who Should Use This Guide</span></a></h2>
-<p>This guide is for:</p>
+<hr>
+<p>This guide is perfect for:</p>
 <ul>
 <li>
 <p>New developers learning JavaScript</p>
@@ -29,38 +29,64 @@
 <p>People working with arrays or numbers who want easier tools</p>
 </li>
 <li>
-<p>Anyone looking for a lightweight library with a “NumPy feel” for JavaScript</p>
+<p>Anyone looking for a lightweight library with a &quot;NumPy feel&quot; in JavaScript</p>
 </li>
 </ul>
-<div class="hint-container important">
-<p class="hint-container-title">Before You Begin</p>
-<p>To follow along with Openmadness, you should:</p>
-<ul>
-<li>
-<p>Know a little bit of JavaScript (basic functions and arrays)</p>
-</li>
-<li>
-<p>Have Node.js installed (for Option 1 in the install guide)</p>
-</li>
-<li>
-<p>Be ready to explore and test some simple code</p>
-</li>
-</ul>
-</div>
-<h2 id="what-is-openmadness" tabindex="-1"><a class="header-anchor" href="#what-is-openmadness"><span>What Is Openmadness?</span></a></h2>
-<p>Openmadness is not a copy of NumPy, but it was inspired by it. It gives you tools like .sum(), .mean(), .transpose(), and .flatten() in a simple and easy way, using JavaScript.</p>
-<p>It helps you do things like:</p>
-<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line"><span class="token keyword">const</span> matrix <span class="token operator">=</span> <span class="token function">omArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span></span>
-<span class="line">  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span></span>
-<span class="line">  <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span></span>
-<span class="line"><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<hr>
+<p>Before You Begin</p>
+<p>To get the most out of this guide, it helps to:</p>
+<p>Know a little JavaScript (functions and arrays)</p>
+<p>Have Node.js installed</p>
+<p>Be ready to try out some code and have fun!</p>
+<h2 id="tipyou-don-t-need-to-be-a-math-expert-openmadness-is-made-to-be-simple-friendly-and-easy-to-use-—-even-if-you-re-new-to-code" tabindex="-1"><a class="header-anchor" href="#tipyou-don-t-need-to-be-a-math-expert-openmadness-is-made-to-be-simple-friendly-and-easy-to-use-—-even-if-you-re-new-to-code"><span>tip
+You don’t need to be a math expert. Openmadness is made to be simple, friendly, and easy to use — even if you’re new to code.</span></a></h2>
+<p>What Is Openmadness?</p>
+<p>Openmadness is not a copy of NumPy, but it was inspired by it.</p>
+<p>It gives you helpful tools like:</p>
+<p>.sum(), .mean(), .transpose(), .flatten()</p>
+<p>All written in clean, readable JavaScript.</p>
+<p>exampleHere’s a quick example of what Openmadness can do:</p>
+<p>const matrix = omArray([
+[1, 2],
+[3, 4]
+]);</p>
+<p>const result = matrix.transpose().sum();</p>
+<p>example
+Here’s a quick example of what Openmadness can do:</p>
+<p>const matrix = omArray([
+[1, 2],
+[3, 4]
+]);</p>
+<p>const result = matrix.transpose().sum();</p>
+<div class="language-infoThe line-numbers-mode" data-highlighter="prismjs" data-ext="infoThe"><pre v-pre><code><span class="line">info</span>
+<span class="line">The code above transposes the matrix (flips the rows and columns) and adds up all the numbers.tipOpenmadness works best when you learn by doing — try things out and explore how the functions behave.</span>
+<span class="line">tip</span>
+<span class="line">Openmadness works best when you learn by doing — try things out and explore how the functions behave.</span>
+<span class="line">---</span>
+<span class="line">success  </span>
+<span class="line">Next Steps</span>
+<span class="line">&lt;p style=&quot;margin-bottom: 0.5rem;&quot;&gt;</span>
+<span class="line">  &lt;a href=&quot;./quickstart.md&quot; style=&quot;padding: 8px 16px; background-color: #3eaf7c; color: white; text-decoration: none; border-radius: 4px;&quot;&gt;</span>
+<span class="line">    Try the Quickstart Guide</span>
+<span class="line">  &lt;/a&gt;</span>
+<span class="line">&lt;/p&gt;&lt;p&gt;</span>
+<span class="line">  &lt;a href=&quot;https://github.com/yourusername/openmadness/blob/main/CONTRIBUTING.md&quot; style=&quot;padding: 8px 16px; background-color: #007acc; color: white; text-decoration: none; border-radius: 4px;&quot;&gt;</span>
+<span class="line">    View the CONTRIBUTING Guide</span>
+<span class="line">  &lt;/a&gt;</span>
+<span class="line">&lt;/p&gt;success </span>
+<span class="line">Next Steps</span>
+<span class="line">&lt;p style=&quot;margin-bottom: 0.5rem;&quot;&gt;</span>
+<span class="line">  &lt;a href=&quot;./quickstart.md&quot; style=&quot;padding: 8px 16px; background-color: #3eaf7c; color: white; text-decoration: none; border-radius: 4px;&quot;&gt;</span>
+<span class="line">    Try the Quickstart Guide</span>
+<span class="line">  &lt;/a&gt;</span>
+<span class="line">&lt;/p&gt;</span>
+<span class="line">&lt;p&gt;</span>
+<span class="line">  &lt;a href=&quot;https://github.com/yourusername/openmadness/blob/main/CONTRIBUTING.md&quot; style=&quot;padding: 8px 16px; background-color: #007acc; color: white; text-decoration: none; border-radius: 4px;&quot;&gt;</span>
+<span class="line">    View the CONTRIBUTING Guide</span>
+<span class="line">  &lt;/a&gt;</span>
+<span class="line">&lt;/p&gt;</span>
 <span class="line"></span>
-<span class="line"><span class="token keyword">const</span> result <span class="token operator">=</span> matrix<span class="token punctuation">.</span><span class="token function">transpose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-<span class="line"></span>
-<span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>The code above transposes a matrix and adds up all the numbers.</p>
-<p>Want to try it out for yourself?</p>
-<p>Head over to the Quickstart Guide to run your first example.</p>
-</div></template>
+<span class="line">&lt;contributors /&gt;</span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
 
 

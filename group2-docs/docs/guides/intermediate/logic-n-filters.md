@@ -1,4 +1,5 @@
 ---
+lang: en-US
 title: "Logic and Filters"
 description: "This page will guide you on how to install openmadness"
 ---

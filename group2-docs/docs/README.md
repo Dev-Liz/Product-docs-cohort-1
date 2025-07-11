@@ -1,7 +1,7 @@
 ---
 home: true
 title: Openmandness
-heroImage: ./assets/openmadness-icon.png
+heroImage: openmadness-icon.png
 heroText: Tame Your Data, Unleash Your Code.
 heroAlt: Openmadness-logo
 tagline: Openmadness brings clarity to mathematical and array-based operations in JavaScript.

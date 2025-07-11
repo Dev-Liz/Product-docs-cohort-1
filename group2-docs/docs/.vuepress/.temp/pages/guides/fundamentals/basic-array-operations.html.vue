@@ -23,7 +23,7 @@
 <span class="line">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>“Addition <span class="token keyword">of</span> an array”<span class="token punctuation">,</span> sumOfArray<span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>Output:</strong></p>
-<!-- ![Addition of array in Openmadness library](../assets/additionOfArrays.png) -->
+<p><img src="/additionOfArrays.png" alt="Addition of array in Openmadness library"></p>
 <p><strong>2. subtract()</strong>: This method allows you to find the difference between two arrays.</p>
 <p><strong>Example</strong>:</p>
 <div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> omArray <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'openmadness'</span><span class="token punctuation">;</span></span>
@@ -33,7 +33,7 @@
 <span class="line">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>“subtraction <span class="token keyword">of</span> an array”<span class="token punctuation">,</span> subtractArray<span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>Output:</strong></p>
-<!-- ![Subtraction of arrays in Openmadness library](../../assets/subtractionOfArrays.png) -->
+<p><img src="/subtractionOfArrays.png" alt="Subtraction of arrays in Openmadness library"></p>
 <p><strong>3. multiply()</strong>: This method allows you to multiply arrays together.</p>
 <p><strong>Example</strong>:</p>
 <div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> omArray <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'openmadness'</span><span class="token punctuation">;</span></span>
@@ -43,7 +43,7 @@
 <span class="line">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>“Multiplication <span class="token keyword">of</span> an array”<span class="token punctuation">,</span> multiplyArray<span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>Output</strong>:</p>
-<!-- ![Multiplication of arrays in Openmadness library](../../assets/multiplicationOfArrays.png) -->
+<p><img src="/multiplicationOfArrays.png" alt="Multiplication of arrays in Openmadness library"></p>
 <p><strong>4. dot()</strong>: This method allows you to calculate the dot product of two arrays, i.e., multiplying the corresponding array elements and summing them up.</p>
 <p><strong>Example</strong>:</p>
 <div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> omArray <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'openmadness'</span><span class="token punctuation">;</span></span>
@@ -57,6 +57,7 @@
 <span class="line">Dot <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token operator">*</span><span class="token number">8</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">12</span><span class="token operator">*</span><span class="token number">24</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">5</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">19</span><span class="token operator">*</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">25</span><span class="token operator">*</span><span class="token number">13</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>Output</strong>:</p>
-<!-- ![Dot of an Array in Openmadness library](../../assets/dotOfArrays.png) --></div></template>
+<p><img src="/dotOfArrays.png" alt="Dot of an Array in Openmadness library"></p>
+</div></template>
 
 

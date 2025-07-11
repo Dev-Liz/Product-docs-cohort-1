@@ -1,5 +1,4 @@
-<template><div><h2 id="quick-start" tabindex="-1"><a class="header-anchor" href="#quick-start"><span>Quick Start</span></a></h2>
-<nav class="table-of-contents"><ul><li><router-link to="#quick-start">Quick Start</router-link></li><li><router-link to="#what-is-openmadness">What is Openmadness?</router-link></li><li><router-link to="#creating-your-first-simulation">Creating Your First Simulation</router-link></li><li><router-link to="#next-steps">Next Steps</router-link></li></ul></nav>
+<template><div><h2 id="🚀-quick-start" tabindex="-1"><a class="header-anchor" href="#🚀-quick-start"><span>🚀 Quick Start</span></a></h2>
 <p>This quickstart tutorial is intended for users new to <strong>Openmadness</strong>. It introduces the core concepts of the library and demonstrates how to perform basic operations. Whether you're building a game, creating a simulation, or experimenting with procedural generation, this guide will help you get started quickly.</p>
 <div class="hint-container note">
 <p class="hint-container-title">Note</p>
@@ -71,10 +70,10 @@
 <h2 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps"><span><strong>Next Steps</strong></span></a></h2>
 <p>Congratulations! You just created your first simulation! 👍 Now that you have gotten the basics down, consider picking the following:</p>
 <ul>
-<li>Guides</li>
-<li>Tutorials</li>
+<li><RouteLink to="/group2-docs/docs/guides.html">Guides</RouteLink></li>
+<li><RouteLink to="/group2-docs/docs/tutorials.html">Tutorials</RouteLink></li>
 </ul>
 <p>Got any ideas to improve the guide, check out our CONTRIBUTING guide on GitHub.</p>
-</div></template>
+<contributors /></div></template>
 
 

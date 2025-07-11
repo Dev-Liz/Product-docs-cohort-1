@@ -4,7 +4,7 @@ title: "Data Broadcasting"
 description: "This page will guide you on how to install openmadness"
 ---
 
-Advanced Guide
+# Advanced Guide
 
 This advanced guide will show you how to perform operations on arrays of different sizes and dive into some core linear algebra concepts.
 

@@ -50,7 +50,7 @@
 <div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code><span class="line">Output: <span class="token punctuation">[</span> <span class="token punctuation">[</span> <span class="token number">0.74</span> <span class="token punctuation">]</span>, <span class="token punctuation">[</span> <span class="token number">0.68</span> <span class="token punctuation">]</span> <span class="token punctuation">]</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>Each output value corresponds to a prediction for the input sample.</p>
-<h3 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps"><span>Next Steps</span></a></h3>
+<p><strong>Next Steps</strong></p>
 <p>This forward-pass prototype can be expanded by:</p>
 <ul>
 <li>Adding more hidden layers</li>

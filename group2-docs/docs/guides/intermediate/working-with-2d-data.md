@@ -1,4 +1,5 @@
 ---
+lang: en-US
 title: "Working with 2D data"
 description: "This page will guide you on how to install openmadness"
 ---
