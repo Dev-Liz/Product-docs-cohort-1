@@ -4,7 +4,6 @@ title: "Contributing to Openmadness"
 description: "This page will guide you on how to install openmadness"
 ---
 
-
 # Contributing to Open Madness 📘
 
 Thank you for your interest in contributing to **Open Madness**! Whether you're spotting typos, improving docs, or adding new features, your help is greatly appreciated. 😊
@@ -117,4 +116,3 @@ Contributions beyond code are welcome:
 Let us know how you'd like to help!
 
 ---
-
