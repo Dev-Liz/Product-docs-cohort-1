@@ -585,219 +585,6 @@ export const SEARCH_INDEX = [
     "extraFields": []
   },
   {
-    "title": "Building a Network",
-    "headers": [
-      {
-        "level": 3,
-        "title": "Next Steps",
-        "slug": "next-steps",
-        "link": "#next-steps",
-        "children": []
-      }
-    ],
-    "path": "/guides/advanced/building-a-network.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Data Broadcasting",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Advanced Guide",
-        "slug": "advanced-guide",
-        "link": "#advanced-guide",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Broadcasting like a pro",
-        "slug": "broadcasting-like-a-pro",
-        "link": "#broadcasting-like-a-pro",
-        "children": [
-          {
-            "level": 3,
-            "title": "Add a number to every item in an array",
-            "slug": "add-a-number-to-every-item-in-an-array",
-            "link": "#add-a-number-to-every-item-in-an-array",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Add two arrays of the same shape",
-            "slug": "add-two-arrays-of-the-same-shape",
-            "link": "#add-two-arrays-of-the-same-shape",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Add a row vector to a matrix",
-            "slug": "add-a-row-vector-to-a-matrix",
-            "link": "#add-a-row-vector-to-a-matrix",
-            "children": []
-          }
-        ]
-      }
-    ],
-    "path": "/guides/advanced/data-broadcasting.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Mini Linear Algebra",
-    "headers": [
-      {
-        "level": 3,
-        "title": "Dot Product",
-        "slug": "dot-product",
-        "link": "#dot-product",
-        "children": []
-      },
-      {
-        "level": 3,
-        "title": "Matrix multiplication",
-        "slug": "matrix-multiplication",
-        "link": "#matrix-multiplication",
-        "children": []
-      },
-      {
-        "level": 3,
-        "title": "Multiply a matrix by a scalar",
-        "slug": "multiply-a-matrix-by-a-scalar",
-        "link": "#multiply-a-matrix-by-a-scalar",
-        "children": []
-      }
-    ],
-    "path": "/guides/advanced/mini-linear-algebra.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Accessing Arrays",
-    "headers": [
-      {
-        "level": 2,
-        "title": "How to Access More Than One Element in an Array",
-        "slug": "how-to-access-more-than-one-element-in-an-array",
-        "link": "#how-to-access-more-than-one-element-in-an-array",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "How to Access All the Elements in an Array",
-        "slug": "how-to-access-all-the-elements-in-an-array",
-        "link": "#how-to-access-all-the-elements-in-an-array",
-        "children": []
-      }
-    ],
-    "path": "/guides/fundamentals/array-elements.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Basic Array Operations",
-    "headers": [],
-    "path": "/guides/fundamentals/basic-array-operations.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Creating  Arrays",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Example Use Case",
-        "slug": "example-use-case",
-        "link": "#example-use-case",
-        "children": []
-      }
-    ],
-    "path": "/guides/fundamentals/creating-arrays.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Logic and Filters",
-    "headers": [
-      {
-        "level": 3,
-        "title": "Example: Filter Values",
-        "slug": "example-filter-values",
-        "link": "#example-filter-values",
-        "children": []
-      }
-    ],
-    "path": "/guides/intermediate/logic-n-filters.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Making sense of Data",
-    "headers": [
-      {
-        "level": 3,
-        "title": "Example: Sum",
-        "slug": "example-sum",
-        "link": "#example-sum",
-        "children": []
-      },
-      {
-        "level": 3,
-        "title": "Example: Mean (Average)",
-        "slug": "example-mean-average",
-        "link": "#example-mean-average",
-        "children": []
-      },
-      {
-        "level": 3,
-        "title": "Example: Max and Min",
-        "slug": "example-max-and-min",
-        "link": "#example-max-and-min",
-        "children": []
-      }
-    ],
-    "path": "/guides/intermediate/making-sense-of-data.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "Working with 2D data",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Reshaping Reality: Working with 2D Data",
-        "slug": "reshaping-reality-working-with-2d-data",
-        "link": "#reshaping-reality-working-with-2d-data",
-        "children": [
-          {
-            "level": 3,
-            "title": "Reshape a List into a Matrix",
-            "slug": "reshape-a-list-into-a-matrix",
-            "link": "#reshape-a-list-into-a-matrix",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Flatten a Matrix",
-            "slug": "flatten-a-matrix",
-            "link": "#flatten-a-matrix",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Transpose a Matrix",
-            "slug": "transpose-a-matrix",
-            "link": "#transpose-a-matrix",
-            "children": []
-          }
-        ]
-      }
-    ],
-    "path": "/guides/intermediate/working-with-2d-data.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
     "title": "2D Array",
     "headers": [
       {
@@ -1380,6 +1167,219 @@ export const SEARCH_INDEX = [
       }
     ],
     "path": "/tutorials/fundamentals/statistics.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Building a Network",
+    "headers": [
+      {
+        "level": 3,
+        "title": "Next Steps",
+        "slug": "next-steps",
+        "link": "#next-steps",
+        "children": []
+      }
+    ],
+    "path": "/guides/advanced/building-a-network.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Data Broadcasting",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Advanced Guide",
+        "slug": "advanced-guide",
+        "link": "#advanced-guide",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Broadcasting like a pro",
+        "slug": "broadcasting-like-a-pro",
+        "link": "#broadcasting-like-a-pro",
+        "children": [
+          {
+            "level": 3,
+            "title": "Add a number to every item in an array",
+            "slug": "add-a-number-to-every-item-in-an-array",
+            "link": "#add-a-number-to-every-item-in-an-array",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Add two arrays of the same shape",
+            "slug": "add-two-arrays-of-the-same-shape",
+            "link": "#add-two-arrays-of-the-same-shape",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Add a row vector to a matrix",
+            "slug": "add-a-row-vector-to-a-matrix",
+            "link": "#add-a-row-vector-to-a-matrix",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/guides/advanced/data-broadcasting.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Mini Linear Algebra",
+    "headers": [
+      {
+        "level": 3,
+        "title": "Dot Product",
+        "slug": "dot-product",
+        "link": "#dot-product",
+        "children": []
+      },
+      {
+        "level": 3,
+        "title": "Matrix multiplication",
+        "slug": "matrix-multiplication",
+        "link": "#matrix-multiplication",
+        "children": []
+      },
+      {
+        "level": 3,
+        "title": "Multiply a matrix by a scalar",
+        "slug": "multiply-a-matrix-by-a-scalar",
+        "link": "#multiply-a-matrix-by-a-scalar",
+        "children": []
+      }
+    ],
+    "path": "/guides/advanced/mini-linear-algebra.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Accessing Arrays",
+    "headers": [
+      {
+        "level": 2,
+        "title": "How to Access More Than One Element in an Array",
+        "slug": "how-to-access-more-than-one-element-in-an-array",
+        "link": "#how-to-access-more-than-one-element-in-an-array",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "How to Access All the Elements in an Array",
+        "slug": "how-to-access-all-the-elements-in-an-array",
+        "link": "#how-to-access-all-the-elements-in-an-array",
+        "children": []
+      }
+    ],
+    "path": "/guides/fundamentals/array-elements.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Basic Array Operations",
+    "headers": [],
+    "path": "/guides/fundamentals/basic-array-operations.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Creating  Arrays",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Example Use Case",
+        "slug": "example-use-case",
+        "link": "#example-use-case",
+        "children": []
+      }
+    ],
+    "path": "/guides/fundamentals/creating-arrays.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Logic and Filters",
+    "headers": [
+      {
+        "level": 3,
+        "title": "Example: Filter Values",
+        "slug": "example-filter-values",
+        "link": "#example-filter-values",
+        "children": []
+      }
+    ],
+    "path": "/guides/intermediate/logic-n-filters.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Making sense of Data",
+    "headers": [
+      {
+        "level": 3,
+        "title": "Example: Sum",
+        "slug": "example-sum",
+        "link": "#example-sum",
+        "children": []
+      },
+      {
+        "level": 3,
+        "title": "Example: Mean (Average)",
+        "slug": "example-mean-average",
+        "link": "#example-mean-average",
+        "children": []
+      },
+      {
+        "level": 3,
+        "title": "Example: Max and Min",
+        "slug": "example-max-and-min",
+        "link": "#example-max-and-min",
+        "children": []
+      }
+    ],
+    "path": "/guides/intermediate/making-sense-of-data.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Working with 2D data",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Reshaping Reality: Working with 2D Data",
+        "slug": "reshaping-reality-working-with-2d-data",
+        "link": "#reshaping-reality-working-with-2d-data",
+        "children": [
+          {
+            "level": 3,
+            "title": "Reshape a List into a Matrix",
+            "slug": "reshape-a-list-into-a-matrix",
+            "link": "#reshape-a-list-into-a-matrix",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Flatten a Matrix",
+            "slug": "flatten-a-matrix",
+            "link": "#flatten-a-matrix",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Transpose a Matrix",
+            "slug": "transpose-a-matrix",
+            "link": "#transpose-a-matrix",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/guides/intermediate/working-with-2d-data.html",
     "pathLocale": "/",
     "extraFields": []
   },

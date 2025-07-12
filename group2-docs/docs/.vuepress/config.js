@@ -3,7 +3,6 @@ import { defineUserConfig } from 'vuepress'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { searchPlugin } from '@vuepress/plugin-search'
 
-
 export default defineUserConfig({
   lang: 'en-US',
   head: [
