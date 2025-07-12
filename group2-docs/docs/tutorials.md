@@ -179,13 +179,13 @@ const blurred = image.convolve(kernel);
 
 1. Memory Efficiency: Openmadness uses typed arrays for example, `Float64Array` for large matrices.
 
-2. Method Chaining: Chain operations to minimize intermediate arrays
+2. Method Chaining: Use Chain operations to minimize intermediate arrays
 
 ```js
 matrix.transpose().reshape(1, 9).sum();
 ```
 
-3. Avoid Deep Nesting: Prefer omArray over raw nested arrays for optimized operations.
+3. Avoid Deep Nesting: Use omArray over raw nested arrays for optimized operations.
 
 #### Edge Cases & Pitfalls
 
@@ -333,7 +333,7 @@ tensor.setPlane(0, 2, [
 
 #### Advanced Use Cases
 
-1. Volumetric Data Processing
+**Volumetric Data Processing**
 
 1. Compute depth-wise gradients:
 
@@ -369,7 +369,7 @@ const grayscale = images.reduce(2, (channel) =>
 
 #### Performance & Best Practices
 
-1. Memory Layout: Usescolumn-major order (depth→rows→cols) for cache efficiency
+1. Memory Layout: Uses column-major order (depth→rows→cols) for cache efficiency
 
 2. Broadcasting: Tensors auto-expand dimensions for example `(4,1,3)` + `(1,5,3)` → `(4,5,3)`.
 
@@ -576,8 +576,7 @@ largeTensor.slice(...).flatten().mean(); // Minimal intermediates
 
 Openmadness provides robust statistical tools for analyzing data dispersion. This guide explains core concepts, practical applications, and implementation details with real-world examples.
 
-1. Core Concepts Explained
-   Variance quantifies how far data points spread from their mean:
+1. Core Concepts: Variance quantifies how far data points spread from their mean:
 
 ```math
 \sigma^2 = \frac{\sum (x_i - \mu)^2}{N} \quad \text{(Population)}
@@ -663,7 +662,6 @@ a. Climate Data Analysis
 Problem: Assess temperature variability across regions
 
 ```js
-Copy
 Download
 // Data structure: [Year][Month][Latitude][Longitude]
 const temperatureData = omArray([...]);
