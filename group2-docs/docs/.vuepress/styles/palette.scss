@@ -1,0 +1,33 @@
+:root {
+  // accent colors
+  --vp-c-accent: #26A7E0;
+  --vp-c-accent-bg: #5CBDE8;
+  --vp-c-accent-hover: #93D3EF;
+  --vp-c-accent-text: var(--vp-c-white);
+  --vp-c-accent-soft: rgb(16 185 129 / 14%);
+
+  // text colors
+  --vp-c-text: rgb(60 60 67);
+  --vp-c-text-mute: rgb(60 60 67 / 78%);
+  --vp-c-text-subtle: rgb(60 60 67 / 56%);
+
+}
+
+[data-theme='dark'] {
+  // brand colors
+  --vp-c-accent: #93D3EF;
+  --vp-c-accent-bg: #5CBDE8;
+  --vp-c-accent-hover: #26A7E0;
+  --vp-c-accent-soft: rgb(16 185 129 / 16%);
+
+  // background colors
+  --vp-c-bg: #1b1b1f;
+  --vp-c-bg-alt: #161618;
+  --vp-c-bg-elv: #202127;
+
+  // text colors
+  --vp-c-text: rgb(235 235 245 / 86%);
+  --vp-c-text-mute: rgb(235 235 245 / 60%);
+  --vp-c-text-subtle: rgb(235 235 245 / 38%);
+
+}

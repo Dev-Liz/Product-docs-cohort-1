@@ -1,0 +1,233 @@
+<template><div><h1 id="variance" tabindex="-1"><a class="header-anchor" href="#variance"><span>Variance</span></a></h1>
+<p>Openmadness provides robust statistical tools for analyzing data dispersion. This guide explains core concepts, practical applications, and implementation details with real-world examples.</p>
+<ol>
+<li>Core Concepts Explained
+Variance quantifies how far data points spread from their mean:</li>
+</ol>
+<div class="language-math line-numbers-mode" data-highlighter="prismjs" data-ext="math"><pre v-pre><code><span class="line">\sigma^2 = \frac{\sum (x_i - \mu)^2}{N} \quad \text{(Population)}</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-math line-numbers-mode" data-highlighter="prismjs" data-ext="math"><pre v-pre><code><span class="line">s^2 = \frac{\sum (x_i - \bar{x})^2}{N-1} \quad \text{(Sample)}</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>Key Differences:</p>
+<ul>
+<li>Population Variance (σ²): Entire dataset available (use ddof=0)</li>
+<li>Sample Variance (s²): Subset of population (use ddof=1 for Bessel's correction)</li>
+</ul>
+<p>Standard Deviation:</p>
+<ul>
+<li>σ = √σ² (Population)</li>
+<li>s = √s² (Sample)
+More interpretable (same units as data)</li>
+</ul>
+<ol start="2">
+<li>Practical Applications
+a. Financial Risk Analysis</li>
+</ol>
+<p>Problem: Calculate portfolio volatility</p>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line"><span class="token keyword">const</span> stockReturns <span class="token operator">=</span> <span class="token function">omArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span></span>
+<span class="line">  <span class="token punctuation">[</span><span class="token number">0.02</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.03</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// Apple</span></span>
+<span class="line">  <span class="token punctuation">[</span><span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.02</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.01</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// Microsoft</span></span>
+<span class="line">  <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.03</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// Google</span></span>
+<span class="line"><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">const</span> weights <span class="token operator">=</span> <span class="token function">omArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Step 1: Compute covariance matrix</span></span>
+<span class="line"><span class="token keyword">const</span> covMatrix <span class="token operator">=</span> stockReturns<span class="token punctuation">.</span><span class="token function">covarianceMatrix</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">ddof</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Step 2: Calculate portfolio variance (wᵀΣw)</span></span>
+<span class="line"><span class="token keyword">const</span> portVariance <span class="token operator">=</span> covMatrix<span class="token punctuation">.</span><span class="token function">weightedVariance</span><span class="token punctuation">(</span>weights<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Step 3: Annualize volatility (√252 trading days)</span></span>
+<span class="line"><span class="token keyword">const</span> annualizedVol <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span>portVariance <span class="token operator">*</span> <span class="token number">252</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>b. Quality Control
+Problem: Detect faulty sensors in manufacturing</p>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line"><span class="token keyword">const</span> sensorReadings <span class="token operator">=</span> <span class="token function">omArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span></span>
+<span class="line">  <span class="token punctuation">[</span><span class="token number">10.1</span><span class="token punctuation">,</span> <span class="token number">10.2</span><span class="token punctuation">,</span> <span class="token number">10.0</span><span class="token punctuation">,</span> <span class="token number">10.1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// Sensor A</span></span>
+<span class="line">  <span class="token punctuation">[</span><span class="token number">9.8</span><span class="token punctuation">,</span> <span class="token number">12.3</span><span class="token punctuation">,</span> <span class="token number">10.5</span><span class="token punctuation">,</span> <span class="token number">8.7</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// Sensor B</span></span>
+<span class="line">  <span class="token punctuation">[</span><span class="token number">10.0</span><span class="token punctuation">,</span> <span class="token number">10.1</span><span class="token punctuation">,</span> <span class="token number">9.9</span><span class="token punctuation">,</span> <span class="token number">10.0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// Sensor C</span></span>
+<span class="line"><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Identify unstable sensors (variance > threshold)</span></span>
+<span class="line"><span class="token keyword">const</span> sensorVariances <span class="token operator">=</span> sensorReadings<span class="token punctuation">.</span><span class="token function">variance</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">ddof</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">const</span> faultySensors <span class="token operator">=</span> sensorVariances<span class="token punctuation">.</span><span class="token function">greaterThan</span><span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token comment">// Output: [false, true, false] → Sensor B problematic</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>c. Image Processing</p>
+<p>Problem: Find edges in medical scans</p>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line"></span>
+<span class="line"><span class="token keyword">const</span> mriSlice <span class="token operator">=</span> <span class="token function">omArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 512x512 pixel matrix</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Compute local variance (3x3 windows)</span></span>
+<span class="line"><span class="token keyword">const</span> localVariance <span class="token operator">=</span> mriSlice<span class="token punctuation">.</span><span class="token function">rollingVariance</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token literal-property property">padding</span><span class="token operator">:</span> <span class="token string">'reflect'</span><span class="token punctuation">,</span></span>
+<span class="line">  <span class="token literal-property property">windowShape</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Threshold for edge detection</span></span>
+<span class="line"><span class="token keyword">const</span> edges <span class="token operator">=</span> localVariance<span class="token punctuation">.</span><span class="token function">greaterThan</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="3">
+<li>Advanced Multidimensional Analysis</li>
+</ol>
+<p>a. Climate Data Analysis</p>
+<p>Problem: Assess temperature variability across regions</p>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line">Copy</span>
+<span class="line">Download</span>
+<span class="line"><span class="token comment">// Data structure: [Year][Month][Latitude][Longitude]</span></span>
+<span class="line"><span class="token keyword">const</span> temperatureData <span class="token operator">=</span> <span class="token function">omArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Monthly variability per grid cell (1990-2020)</span></span>
+<span class="line"><span class="token keyword">const</span> monthlyVariance <span class="token operator">=</span> temperatureData</span>
+<span class="line">  <span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">depth</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// 1990-2020</span></span>
+<span class="line">  <span class="token punctuation">.</span><span class="token function">variance</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// Variance across years per month/location</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Identify high-variance regions</span></span>
+<span class="line"><span class="token keyword">const</span> volatileRegions <span class="token operator">=</span> monthlyVariance<span class="token punctuation">.</span><span class="token function">greaterThan</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>b. Machine Learning Preprocessing</p>
+<p>Problem: Feature selection for predictive model</p>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line"><span class="token keyword">const</span> housingData <span class="token operator">=</span> <span class="token function">omArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span></span>
+<span class="line">  <span class="token punctuation">[</span><span class="token number">2500</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1990</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// [sqft, bedrooms, year]</span></span>
+<span class="line">  <span class="token punctuation">[</span><span class="token number">3000</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1980</span><span class="token punctuation">]</span><span class="token punctuation">,</span></span>
+<span class="line">  <span class="token comment">// ... 1000 rows</span></span>
+<span class="line"><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Calculate feature variances</span></span>
+<span class="line"><span class="token keyword">const</span> featureVars <span class="token operator">=</span> housingData<span class="token punctuation">.</span><span class="token function">variance</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">ddof</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Select high-variance features (threshold = 0.5)</span></span>
+<span class="line"><span class="token keyword">const</span> selectedFeatures <span class="token operator">=</span> housingData<span class="token punctuation">.</span><span class="token function">filterColumns</span><span class="token punctuation">(</span></span>
+<span class="line">  featureVars<span class="token punctuation">.</span><span class="token function">greaterThan</span><span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>c. Time-Series Anomaly Detection
+Problem: Identify credit card fraud</p>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line"></span>
+<span class="line"><span class="token keyword">const</span> transactionHistory <span class="token operator">=</span> <span class="token function">omArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [txn_count, amount] per hour</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Compute rolling 24-hour statistics</span></span>
+<span class="line"><span class="token keyword">const</span> stats <span class="token operator">=</span> transactionHistory<span class="token punctuation">.</span><span class="token function">rollingWindow</span><span class="token punctuation">(</span><span class="token number">24</span><span class="token punctuation">,</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token literal-property property">stats</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'mean'</span><span class="token punctuation">,</span> <span class="token string">'std'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></span>
+<span class="line">  <span class="token literal-property property">ddof</span><span class="token operator">:</span> <span class="token number">1</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Flag anomalies (3σ threshold)</span></span>
+<span class="line"><span class="token keyword">const</span> anomalies <span class="token operator">=</span> transactionHistory<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">hour<span class="token punctuation">,</span> idx</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token keyword">const</span> <span class="token punctuation">[</span>mean<span class="token punctuation">,</span> std<span class="token punctuation">]</span> <span class="token operator">=</span> stats<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>idx<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">return</span> hour<span class="token punctuation">.</span><span class="token function">subtract</span><span class="token punctuation">(</span>mean<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">greaterThan</span><span class="token punctuation">(</span>std<span class="token punctuation">.</span><span class="token function">multiply</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="4">
+<li>Specialized Variance Methods</li>
+</ol>
+<p>a. Weighted Variance</p>
+<p>Use case: Survey analysis with sample weights</p>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line"><span class="token keyword">const</span> responses <span class="token operator">=</span> <span class="token function">omArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Satisfaction (1-5)</span></span>
+<span class="line"><span class="token keyword">const</span> weights <span class="token operator">=</span> <span class="token function">omArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">1.2</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token number">1.1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Demographic weights</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">const</span> weightedVar <span class="token operator">=</span> responses<span class="token punctuation">.</span><span class="token function">weightedVariance</span><span class="token punctuation">(</span>weights<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">ddof</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">b<span class="token punctuation">.</span> Pooled Variance</span>
+<span class="line">Use <span class="token keyword">case</span><span class="token operator">:</span> Clinical trial analysis</span>
+<span class="line">javascript</span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">const</span> groupA <span class="token operator">=</span> <span class="token function">omArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Treatment group</span></span>
+<span class="line"><span class="token keyword">const</span> groupB <span class="token operator">=</span> <span class="token function">omArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Control group</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">const</span> pooledVar <span class="token operator">=</span> omArray<span class="token punctuation">.</span><span class="token function">pooledVariance</span><span class="token punctuation">(</span><span class="token punctuation">[</span>groupA<span class="token punctuation">,</span> groupB<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">ddof</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>c. Covariance Matrix
+Use case: Dimensionality reduction (PCA)</p>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line"><span class="token keyword">const</span> dataMatrix <span class="token operator">=</span> <span class="token function">omArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// n observations × p features</span></span>
+<span class="line"><span class="token keyword">const</span> covMatrix <span class="token operator">=</span> dataMatrix<span class="token punctuation">.</span><span class="token function">covarianceMatrix</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">ddof</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Eigen decomposition for PCA</span></span>
+<span class="line"><span class="token keyword">const</span> <span class="token punctuation">{</span>eigenvalues<span class="token punctuation">}</span> <span class="token operator">=</span> covMatrix<span class="token punctuation">.</span><span class="token function">eigen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="5">
+<li>Performance Optimization</li>
+</ol>
+<p>Memory-Efficient Computation:</p>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line"><span class="token comment">// Single-pass algorithm (Welford's method)</span></span>
+<span class="line"><span class="token keyword">function</span> <span class="token function">onlineVariance</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token keyword">let</span> n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">let</span> mean <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">let</span> <span class="token constant">M2</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">  data<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="line">    n<span class="token operator">++</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">const</span> delta <span class="token operator">=</span> x <span class="token operator">-</span> mean<span class="token punctuation">;</span></span>
+<span class="line">    mean <span class="token operator">+=</span> delta <span class="token operator">/</span> n<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token constant">M2</span> <span class="token operator">+=</span> delta <span class="token operator">*</span> <span class="token punctuation">(</span>x <span class="token operator">-</span> mean<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">variance</span><span class="token operator">:</span> <span class="token constant">M2</span> <span class="token operator">/</span> <span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// Sample variance</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Batch Processing for Large Datasets:</p>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line"><span class="token keyword">const</span> largeData <span class="token operator">=</span> <span class="token function">omArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 10M elements</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Process in chunks</span></span>
+<span class="line"><span class="token keyword">const</span> chunkedVariance <span class="token operator">=</span> largeData</span>
+<span class="line">  <span class="token punctuation">.</span><span class="token function">chunk</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>                   <span class="token comment">// Process 1000-element chunks</span></span>
+<span class="line">  <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">chunk</span> <span class="token operator">=></span> chunk<span class="token punctuation">.</span><span class="token function">variance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">.</span><span class="token function">mean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                       <span class="token comment">// Average of chunk variances</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="6">
+<li>Common Pitfalls &amp; Solutions</li>
+</ol>
+<ul>
+<li>
+<p><strong>Small sample bias:</strong><br>
+Solution: Use <code v-pre>ddof=1</code> for sample variance<br>
+Example: <code v-pre>data.variance({ddof: 1})</code></p>
+</li>
+<li>
+<p><strong>Outlier distortion:</strong><br>
+Solution: Use trimmed variance<br>
+Example: <code v-pre>data.trimmedVariance(0.1)</code></p>
+</li>
+<li>
+<p><strong>Missing values:</strong><br>
+Solution: Automatic exclusion with warning<br>
+Example: <code v-pre>[1, NaN, 3].variance()</code> // = 1</p>
+</li>
+<li>
+<p><strong>Comparing different scales:</strong><br>
+Solution: Use coefficient of variation<br>
+Example: <code v-pre>data.std() / data.mean()</code></p>
+</li>
+<li>
+<p><strong>Non-normal distributions:</strong><br>
+Solution: Use median absolute deviation (MAD)<br>
+Example: <code v-pre>data.mad()</code></p>
+</li>
+</ul>
+<ol start="7">
+<li>Real-World Case Study: E-Commerce</li>
+</ol>
+<p>Problem: Analyze sales consistency across product categories</p>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code><span class="line"><span class="token keyword">const</span> salesData <span class="token operator">=</span> <span class="token function">omArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span></span>
+<span class="line">  <span class="token comment">// [Electronics, Clothing, Groceries] weekly sales</span></span>
+<span class="line">  <span class="token punctuation">[</span><span class="token number">12000</span><span class="token punctuation">,</span> <span class="token number">8000</span><span class="token punctuation">,</span> <span class="token number">15000</span><span class="token punctuation">]</span><span class="token punctuation">,</span></span>
+<span class="line">  <span class="token punctuation">[</span><span class="token number">11500</span><span class="token punctuation">,</span> <span class="token number">8200</span><span class="token punctuation">,</span> <span class="token number">14900</span><span class="token punctuation">]</span><span class="token punctuation">,</span></span>
+<span class="line">  <span class="token punctuation">[</span><span class="token number">3000</span><span class="token punctuation">,</span> <span class="token number">8500</span><span class="token punctuation">,</span> <span class="token number">15200</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// Electronics outage in week 3</span></span>
+<span class="line"><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Category volatility (sample std dev)</span></span>
+<span class="line"><span class="token keyword">const</span> categoryStdDev <span class="token operator">=</span> salesData<span class="token punctuation">.</span><span class="token function">std</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">ddof</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token comment">// ≈ [4500, 208, 152] → Electronics highly volatile</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Identify anomalous weeks (z-score > 2)</span></span>
+<span class="line"><span class="token keyword">const</span> zScores <span class="token operator">=</span> salesData</span>
+<span class="line">  <span class="token punctuation">.</span><span class="token function">subtract</span><span class="token punctuation">(</span>salesData<span class="token punctuation">.</span><span class="token function">mean</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">.</span><span class="token function">divide</span><span class="token punctuation">(</span>salesData<span class="token punctuation">.</span><span class="token function">std</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">ddof</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">const</span> anomalies <span class="token operator">=</span> zScores<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">greaterThan</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token comment">// Week 3: [true, false, false]</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
+
+
