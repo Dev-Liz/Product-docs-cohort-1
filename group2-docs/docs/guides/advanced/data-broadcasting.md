@@ -1,7 +1,7 @@
 ---
 lang: en-US
 title: "Data Broadcasting"
-description: "This page will guide you on how to install openmadness"
+description: "Learn to Broadcast data with Openmadness"
 ---
 
 # Advanced Guide

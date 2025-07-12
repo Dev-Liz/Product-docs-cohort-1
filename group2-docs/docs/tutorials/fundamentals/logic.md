@@ -1,6 +1,7 @@
 ---
+lang: en-US
 title: "Logic"
-description: "This page will guide you on how to install openmadness"
+description: "Learn how shapes logics are used in OpenMadness"
 ---
 
 # Logic

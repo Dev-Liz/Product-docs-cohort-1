@@ -1,6 +1,6 @@
 ---
 title: "Size"
-description: "This page will guide you on how to install openmadness"
+description: "Learn about the sizes of Arrays in Openmadness"
 ---
 
 # Size

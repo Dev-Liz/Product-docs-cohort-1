@@ -1,7 +1,7 @@
 ---
 lang: en-US
 title: "Statistics"
-description: "This page will guide you on how to install openmadness"
+description: "This page will Introduce you Statistical functions in Openmadness"
 ---
 ## Statistics
 

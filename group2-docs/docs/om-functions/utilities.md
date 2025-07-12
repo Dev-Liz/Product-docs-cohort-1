@@ -1,7 +1,7 @@
 ---
 lang: en-US
 title: "Utilities"
-description: "This page will guide you on how to install openmadness"
+description: "This page contains Utilities functions in Openmadness"
 ---
 
 ## Utilities

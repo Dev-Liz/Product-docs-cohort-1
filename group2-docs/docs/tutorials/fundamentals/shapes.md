@@ -1,33 +1,86 @@
 ---
+lang: en-US
 title: "Shapes"
-description: "This page will guide you on how to install openmadness"
+description: "Learn how shapes define the structure of arrays in Openmadness"
 ---
 
-# Shape
+# Understanding Array Shapes
 
+In Openmadness, the **shape** of an array defines its dimensions and structure. It's like a blueprint that describes how your data is organized in space.
 
-The shape of an Openmadness array describes its dimensions or structure. Think of it as how your data is organized – like the rows and columns of a spreadsheet.
-* A simple list of numbers has one dimension.
-* A table of numbers has two dimensions (rows and columns).
-The shape property returns an array indicating the size of each dimension.
+## What is Shape?
+
+The shape property returns an array where each element represents the size of a dimension:
+
+- For a 1D array (vector): shape is `[length]`
+- For a 2D array (matrix): shape is `[rows, columns]`
+- For a 3D array (cube): shape is `[depth, rows, columns]`
+
+## Examples
+
+- 1D Array (Vector)
 
 ```js
-import om from 'openmadness';
-// A 1-dimensional array (like a single list)
-const dailyVisitors = om.array([1000, 1200, 950, 1300]);
-console.log("Daily Visitors data:", dailyVisitors.data);
-console.log("Shape of Daily Visitors:", dailyVisitors.shape); // Output: [4]
-// It has 4 elements in its single dimension.
-
-// A 2-dimensional array (like a grid or table)
-const quarterlySales = om.array([
-    [100, 120, 90],  // Q1 sales for 3 regions
-    [110, 130, 95],  // Q2 sales for 3 regions
-    [105, 125, 100]  // Q3 sales for 3 regions
-]);
-console.log("\nQuarterly Sales data:\n", quarterlySales.data);
-console.log("Shape of Quarterly Sales:", quarterlySales.shape); // Output: [3, 3]
-// This means 3 rows and 3 columns.
-
+const temperatures = om.array([72, 75, 68, 71, 69]);
+console.log("Temperatures shape:", temperatures.shape); // Output: [5]
+// A single dimension with 5 elements
 ```
-Understanding shape is crucial because many operations require arrays to have compatible shapes.
+
+- 2D Array (Matrix)
+
+```js
+const monthlyRevenue = om.array([
+  [45000, 52000, 49000], // Q1 revenue for 3 products
+  [48000, 51000, 47000], // Q2 revenue for 3 products
+  [50000, 53000, 51000], // Q3 revenue for 3 products
+]);
+console.log("Monthly Revenue shape:", monthlyRevenue.shape); // Output: [3, 3]
+// 3 rows and 3 columns
+```
+
+- 3D Array (Cube)
+
+```js
+const yearlyData = om.array([
+  // Year 1
+  [
+    [10, 20, 30], // Product A, regions 1-3
+    [15, 25, 35], // Product B, regions 1-3
+  ],
+  // Year 2
+  [
+    [12, 22, 32], // Product A, regions 1-3
+    [17, 27, 37], // Product B, regions 1-3
+  ],
+]);
+console.log("Yearly Data shape:", yearlyData.shape); // Output: [2, 2, 3]
+// 2 years, 2 products, 3 regions
+```
+
+## Why Shapes Matter
+
+Understanding shapes is essential because:
+
+1. **Operation Compatibility**: Many operations require arrays with compatible shapes
+2. **Broadcasting**: OpenMadness can automatically expand smaller arrays to match larger ones
+3. **Performance**: Knowing your data's shape helps optimize memory usage and computation
+
+## Reshaping Arrays
+
+You can transform an array's shape while preserving its data using the `reshape()` method:
+
+```js
+import om from "openmadness";
+
+const data = om.array([1, 2, 3, 4, 5, 6]);
+console.log("Original shape:", data.shape); // Output: [6]
+
+const reshaped = data.reshape([2, 3]);
+console.log("Reshaped data:", reshaped.data);
+// Output: [[1, 2, 3], [4, 5, 6]]
+console.log("New shape:", reshaped.shape); // Output: [2, 3]
+```
+
+::: tip Remember
+When reshaping, the total number of elements must remain the same (2×3=6 in the example above).
+:::

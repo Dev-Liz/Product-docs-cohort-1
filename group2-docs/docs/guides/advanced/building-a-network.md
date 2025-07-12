@@ -1,7 +1,7 @@
 ---
 lang: en-US
 title: "Building a Network"
-description: "This page will guide you on how to install openmadness"
+description: "Learn to build a Neural Network with Openmadness"
 ---
 
 
@@ -74,7 +74,7 @@ Output: [ [ 0.74 ], [ 0.68 ] ]
 ```
 Each output value corresponds to a prediction for the input sample.
 
-**Next Steps**
+### Next Steps
 
 This forward-pass prototype can be expanded by:
 - Adding more hidden layers

@@ -1,7 +1,7 @@
 ---
 lang: en-US
 title: "Making sense of Data"
-description: "This page will guide you on how to install openmadness"
+description: "Making sense of Data in Openmadness"
 ---
 
 

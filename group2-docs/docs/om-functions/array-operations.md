@@ -1,7 +1,7 @@
 ---
 lang: en-US
 title: "Array Operations"
-description: "This page will guide you on how to install openmadness"
+description: "This page will introduce you to array-operations functions in Openmadness"
 ---
 
 ## OM-Functions

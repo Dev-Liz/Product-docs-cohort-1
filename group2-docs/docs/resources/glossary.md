@@ -1,14 +1,13 @@
 ---
 lang: en-US
 title: "Glossary"
-description: "This page will guide you on how to install openmadness"
+description: "Lookup common terms in Openmadness"
 ---
 
 # Glossary
 
 The glossary section provides definitions for key terms and concepts used in the OpenMadness JavaScript library, designed to help you understand its functionality for fast and intuitive array and math operations. Terms are listed alphabetically for easy reference.
 
-[[toc]]
 
 ## Array
 

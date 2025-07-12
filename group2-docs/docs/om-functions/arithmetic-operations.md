@@ -1,7 +1,7 @@
 ---
 lang: en-US
 title: "Arithmetic Operations"
-description: "This page will guide you on how to install openmadness"
+description: "This page will introduce you to Openmadness functions for Arithmetric Operations"
 ---
 
 ## Arthimetric Operations

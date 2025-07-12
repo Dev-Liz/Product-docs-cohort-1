@@ -1,7 +1,7 @@
 ---
 lang: en-US
 title: "Frequently Asked Questions"
-description: "This page will guide you on how to install openmadness"
+description: "This page answers all your Questions about Openmadness"
 ---
 
 

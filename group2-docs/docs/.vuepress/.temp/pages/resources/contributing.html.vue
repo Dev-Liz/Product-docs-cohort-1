@@ -1,19 +1,5 @@
-<template><div><h1 id="contributing-to-open-madness-📘" tabindex="-1"><a class="header-anchor" href="#contributing-to-open-madness-📘"><span>Contributing to Open Madness 📘</span></a></h1>
-<p>Thank you for your interest in contributing to <strong>Open Madness</strong>! Whether you're spotting typos, improving docs, or adding new features, your help is greatly appreciated. 😊</p>
-<h2 id="table-of-contents" tabindex="-1"><a class="header-anchor" href="#table-of-contents"><span>Table of Contents</span></a></h2>
-<ul>
-<li><a href="#how-can-i-contribute">How Can I Contribute?</a></li>
-<li><a href="#good-first-issues--where-to-look">Good First Issues &amp; Where to Look</a></li>
-<li><a href="#reporting-bugs-or-typos">Reporting Bugs or Typos</a></li>
-<li><a href="#submitting-changes-pull-requests">Submitting Changes (Pull Requests)</a></li>
-<li><a href="#development-setup">Development Setup</a></li>
-<li><a href="#coding--formatting-standards">Coding &amp; Formatting Standards</a></li>
-<li><a href="#commit-message-guidelines">Commit Message Guidelines</a></li>
-<li><a href="#review-process">Review Process</a></li>
-<li><a href="#non%E2%80%91code-contributions">Non‑Code Contributions</a></li>
-<li><a href="#code-of-conduct">Code of Conduct</a></li>
-<li><a href="#contact--communication">Contact &amp; Communication</a></li>
-</ul>
+<template><div><h1 id="contributing-to-openmadness-📘" tabindex="-1"><a class="header-anchor" href="#contributing-to-openmadness-📘"><span>Contributing to Openmadness 📘</span></a></h1>
+<p>Thank you for your interest in contributing to <strong>Openmadness</strong>! Whether you're spotting typos, improving docs, or adding new features, your help is greatly appreciated. 😊</p>
 <hr>
 <h2 id="how-can-i-contribute" tabindex="-1"><a class="header-anchor" href="#how-can-i-contribute"><span>How Can I Contribute?</span></a></h2>
 <p>There are many ways to help:</p>

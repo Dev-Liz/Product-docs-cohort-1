@@ -1,7 +1,7 @@
 ---
 lang: en-US
 title: "Working with 2D data"
-description: "This page will guide you on how to install openmadness"
+description: "Working with 2D Data in Openmadness"
 ---
 
 Now that you're familiar with the basics of Openmadness, let’s explore some of the library's powerful features in more depth. This guide will help you learn how to reshape your data, understand its statistical properties, and extract the specific information you need.
